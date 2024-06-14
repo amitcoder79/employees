@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { FormEventHandler, useState } from 'react';
 
 export default function Form() {
 
@@ -12,11 +12,11 @@ export default function Form() {
     address: '',
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Here, you can handle form submission logic
     console.log(formData);

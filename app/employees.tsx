@@ -3,10 +3,22 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
+interface Address {
+  address: string
+}
+interface Employee {
+  id: string
+  firstName: string;
+  lastName: string;
+  age: string;
+  maidenName: string;
+  address: Address;
+}
+
 
 export default function Employees() {
 
-  const [employees, setEmployees] = useState([]);
+  const [employees, setEmployees] = useState<Employee[]>([]);
 
 
   useEffect(() => {
